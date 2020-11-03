@@ -20,7 +20,7 @@ transactionsRouter.get('/', async (request, response) => {
   });
   const balance = await transactionsRepository.getBalance();
 
-  // transactions.map(transaction => delete transaction.category_id);
+  transactions.map(transaction => delete transaction.category_id);
 
   return response.json({ transactions, balance });
 });
